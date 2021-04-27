@@ -1,0 +1,12 @@
+1) 리소스와 리소스 상태
+- 사용 용도에 맞춰 GET, POST, PUT, DELETE 메서드를 사용하고,
+- 적절한 상태 코드(200, 201 등)을 사용해야 한다.
+
+2) 상태 코드
+- 2xx -> Ok
+- 4xx -> Client Error
+- 5xx -> Server Error
+
+3) Spring AOP(Aspect-Oriented Programming)
+- 비즈니스 로직에서 공통 로직을 분리하고 원하는 시점에 수행하도록 하는 프로그래밍 방식이다.
+- 공통 로직의 소스 코드가 중복되지 않는 장점도 있다.

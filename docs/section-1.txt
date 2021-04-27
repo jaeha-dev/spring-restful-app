@@ -1,0 +1,42 @@
+1) 웹 서버와 웹 애플리케이션 서버(WAS)
+- 정적 콘텐츠(HTML, CSS, JS)를 처리할 때는 웹 서버에서 처리한다.
+- 동적 콘텐츠(DB 연계 등)를 처리할 때는 웹 애플리케이션 서버에서 처리한다.
+
+2) SOAP(Simple Object Access Protocol)
+- 네트워크 상에서 클라이언트와 서버 사이의 데이터 통신 방식이다.
+- XML 형식을 사용하여 데이터를 요청하고 응답을 전달하는 방식이다.
+
+3-1) REST(REpresentational State Transfer)
+- 네트워크 상에서 클라이언트와 서버 사이의 데이터 통신 방식이다.
+- HTTP 프로토콜(메서드와 상태 코드)을 통해 리소스와 리소스의 상태를 처리하는 아키텍처이다.
+- HTTP 메서드: GET, POST, PUT, DELETE / HTTP 상태 코드: 200(Ok), 403(FORBIDDEN), 404(Not Found)...
+- REST API를 제공하는 웹 서비스 -> RESTful!
+
+3-1) RESTful에서 리소스(Resource)
+- URI(Uniform Resource Identifier): 인터넷 자원을 나타내는 '유일한 주소'이다.
+- XML, HTML, JSON 등의 포맷을 사용한다.
+
+3-2) 본 프로젝트에서는,
+- Spring Boot, RESTful, JSON을 사용한다.
+
+4-1) Spring Boot
+- 내장형 웹 애플리케이션 서버(Tomcat, Netty, Undertow 등)를 통해 단독으로 실행 가능한 애플리케이션을 생성할 수 있다.
+
+4-2) IoC(Inversion of Control)
+- 스프링 컨테이너에 의해서 인스턴스(Bean)가 생성되고 관리되는 개념이다.
+- 스프링 컨테이너는 빈 간의 의존 관계도 함께 관리한다.
+- Constructor/Setter, @Autowired(Field) 등의 의존성 주입 방식으로 특정 클래스에 빈을 주입할 수 있다.
+
+4-3) 디스패처 서블릿(Dispatch Servlet)
+- 클라이언트의 모든 요청을 하나의 영역(디스패처 서블릿)에서 받고 처리한다.
+- 요청에 적합한 핸들러로 요청을 전달한다.
+
+4-4) Rest Controller (@Controller + @ResponseBody)
+- Spring 4 버전부터 @RestController 어노테이션을 지원한다.
+- View 파일을 갖지 않는 REST Data(JSON/XML)를 반환한다.
+- HTTP 요청 -> 디스패처 서블릿 -> 핸들러 매핑 -> REST 컨트롤러 -> HTTP 응답의 구조로 실행된다.
+(Spring MVC는 View 리졸버, ModelAndView 등을 추가로 사용된다.)
+
+4-5) URL 형식
+- Query String: @RequestParam 어노테이션을 사용한다. (/users?id=123)
+- Path Variable: @PathVariable 어노테이션을 사용한다. (/users/123)

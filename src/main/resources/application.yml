@@ -1,0 +1,8 @@
+server:
+  port: 8000
+
+# 로깅
+logging:
+  level:
+    # org.springframework 패키지 영역만 디버그 모드로 로깅한다.
+    org.springframework: debug
