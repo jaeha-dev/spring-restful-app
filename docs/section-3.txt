@@ -1,0 +1,24 @@
+1) i18n 메시지 국제화
+- 다국어 메시지 번들 파일(.properties) 을 갖는다.
+- .yml 파일을 사용할 수 있는 라이브러리도 존재한다.
+(일부 설정 문제가 있으므로 .properties 파일을 사용한다.)
+- Postman 툴에서 Headers 탭에 Accept-Language 키와 en, fr 등의 값을 입력하여 사용한다.
+
+2) XML 응답 데이터 형식 변환
+- com.fasterxml.jackson.dataformat 라이브러리(2.10.2 버전)를 등록한다.
+- Postman 툴에서 Headers 탭에 Accept 키와 application/xml 값을 입력한다.
+
+3) 필드 필터링
+- @JsonIgnore, @JsonIgnoreProperties, @JsonFilter 어노테이션으로 제어할 수 있다.
+
+4) API 버전 관리
+- @GetMapping(path = "/v1/admin/users/{id}")
+(URI를 사용한 버전 관리)
+- @GetMapping(value = "/admin/users/{id}/", params = "version=1")
+(Request Parameter를 사용한 버전 관리; /admin/users/1/?version=1)
+- @GetMapping(value = "/admin/users/{id}", headers = "X-API-VERSION=1")
+(HEADER를 사용한 버전 관리(헤더 값은 임의 지정))
+- @GetMapping(value = "/admin/users/{id}", produces = "application/v1+json")
+(MIME 타입을 사용한 버전 관리(프로듀스 값은 임의 지정))
+- HEADER를 사용한 방식은 Postman 툴에서 Headers 탭에 X-API-VERSION 키와 1 값을 입력한다.
+- MIME 타입을 사용한 방식은 Postman 툴에서 Headers 탭에 Accept 키와 application/v1+json 값을 입력한다.

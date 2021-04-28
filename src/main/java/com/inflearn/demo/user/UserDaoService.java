@@ -12,15 +12,16 @@ public class UserDaoService {
     private static List<User> users = new ArrayList<>();
 
     static {
-        users.add(new User(1, "Kenneth", new Date()));
-        users.add(new User(2, "Alice", new Date()));
-        users.add(new User(3, "Elena", new Date()));
+        users.add(new User(1, "Kenneth", "12345", new Date()));
+        users.add(new User(2, "Alice", "12345", new Date()));
+        users.add(new User(3, "Elena", "12345", new Date()));
     }
 
     public User save(User user) {
         if (user.getId() == null) {
             user.setId(++usersCount);
         }
+        user.setCreatedAt(new Date());
         users.add(user);
         return user;
     }
