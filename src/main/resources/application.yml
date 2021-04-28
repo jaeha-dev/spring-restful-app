@@ -4,10 +4,25 @@ server:
 spring:
   messages:
     basename: messages
+  # security:
+  #   user:
+  #     name: user
+  #     password: 12345
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+# 애플리케이션 상태
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 # 로깅
 logging:
   level:
     # org.springframework 패키지 영역만 디버그 모드로 로깅한다.
     org.springframework: debug
-

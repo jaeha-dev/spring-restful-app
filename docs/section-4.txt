@@ -1,0 +1,18 @@
+1) Hateoas (-> hate O-A-S)
+- Note: Pronunciations of HATEOAS vary.
+  Some people pronounce it as "hate-ee-os," similar to "hideous," or as "hate O-A-S".
+  People also refer to it as a hypermedia-driven system.
+- Hypermedia As the Engine Of Application State
+  (현재 리소스와 연관된(호출 가능한) 자원 상태 정보를 제공한다.)
+
+1-1) Spring Hateoas
+- 2.1.8 버전에서,
+  Resource와 ControllerLinkBuilder 클래스를 사용한다.
+- 2.2 버전에서,
+  EntityModel과 WebMvcLinkBuilder 클래스를 사용한다. (변경됨)
+
+2) Spring Actuator
+- 애플리케이션의 상태를 확인할 수 있다.
+- localhost:8000/actuator
+- localhost:8000/actuator/health
+  (status 값이 UP일 경우, 서버 상태가 작동 중임을 의미한다.)
